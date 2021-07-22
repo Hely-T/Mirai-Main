@@ -1,4 +1,5 @@
 {
+    "language": "vi",
     "DeveloperMode": false,
     "autoCreateDB": true,
     "allowInbox": true,
@@ -46,10 +47,10 @@
         "bitlyAPI": ""
     },
     "sing": {
-        "YOUTUBE_API": "AIzaSyB6pTkV2PM7yLVayhnjDSIM0cE_MbEtuvo"
+        "YOUTUBE_API": "AIzaSyDPeYxUaAlpfrn6QgGaKnfLyGoqHp5fyGY"
     },
     "video": {
-        "YOUTUBE_API": "AIzaSyB6pTkV2PM7yLVayhnjDSIM0cE_MbEtuvo"
+        "YOUTUBE_API": "AIzaSyDPeYxUaAlpfrn6QgGaKnfLyGoqHp5fyGY"
     },
     "weather": {
         "OPEN_WEATHER": "081c82065cfee62cb7988ddf90914bdd"

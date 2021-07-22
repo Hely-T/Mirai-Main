@@ -1,1 +1,46 @@
-var _0x9bb3=["request","fs","config","exports","gh\xE9p","1.1.0","HungCho","Gh\xE9p \u0111\xF4i","Info","info","run","21%","67%","19%","37%","17%","96%","52%","62%","76%","83%","100%","99%","0%","48%","random","length","floor","senderID","getUserInfo","name","threadID","getThreadInfo","participantIDs","Con vo\u031b\u0323 cu\u0309a ","","changeNickname","Th\u1eb1ng ch\u1ed3ng cu\u0309a ","gender","Nam","Nu\u031b\u0303","Tra\u0302\u0300n \u0110u\u031b\u0301c Bo"," \u0111\xE3 \u0111\u01b0\u1ee3c h\u1ec7 th\u1ed1ng l\u1ef1a ch\u1ecdn gh\xE9p \u0111\xF4i v\u1edbi b\u1ea1n.","/src/1.png","createReadStream","unlinkSync","sendMessage","close","on","createWriteStream","pipe","https://graph.facebook.com/","/picture?width=512&height=512&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9"];const request=require(_0x9bb3[0]);const fs=require(_0x9bb3[1]);module[_0x9bb3[3]][_0x9bb3[2]]= {name:_0x9bb3[4],version:_0x9bb3[5],hasPermssion:0,credits:_0x9bb3[6],description:_0x9bb3[7],commandCategory:_0x9bb3[8],usages:_0x9bb3[9],cooldowns:5,dependencies:[_0x9bb3[0],_0x9bb3[1]]};module[_0x9bb3[3]][_0x9bb3[10]]= async ({api,event,args,client,Users,Threads,__GLOBAL,Currencies})=>{var tl=[_0x9bb3[11],_0x9bb3[12],_0x9bb3[13],_0x9bb3[14],_0x9bb3[15],_0x9bb3[16],_0x9bb3[17],_0x9bb3[18],_0x9bb3[19],_0x9bb3[20],_0x9bb3[21],_0x9bb3[22],_0x9bb3[23],_0x9bb3[24]];var tle=tl[Math[_0x9bb3[27]](Math[_0x9bb3[25]]()* tl[_0x9bb3[26]])];let dataa= await api[_0x9bb3[29]](event[_0x9bb3[28]]);let namee= await dataa[event[_0x9bb3[28]]][_0x9bb3[30]];let loz= await api[_0x9bb3[32]](event[_0x9bb3[31]]);var emoji=loz[_0x9bb3[33]];var id=emoji[Math[_0x9bb3[27]](Math[_0x9bb3[25]]()* emoji[_0x9bb3[26]])];let data= await api[_0x9bb3[29]](id);let name= await data[id][_0x9bb3[30]];api[_0x9bb3[36]](`${_0x9bb3[34]}${name}${_0x9bb3[35]}`,event[_0x9bb3[31]],event[_0x9bb3[28]]);api[_0x9bb3[36]](`${_0x9bb3[37]}${namee}${_0x9bb3[35]}`,event[_0x9bb3[31]],id);var sex= await data[id][_0x9bb3[38]];var gender=sex== 2?_0x9bb3[39]:sex== 1?_0x9bb3[40]:_0x9bb3[41];var callback=()=>{return api[_0x9bb3[46]]({body:`${_0x9bb3[35]}${name}${_0x9bb3[42]}`,attachment:fs[_0x9bb3[44]](__dirname+ _0x9bb3[43])},event[_0x9bb3[31]],()=>{return fs[_0x9bb3[45]](__dirname+ _0x9bb3[43])})};return request(encodeURI(`${_0x9bb3[51]}${id}${_0x9bb3[52]}`))[_0x9bb3[50]](fs[_0x9bb3[49]](__dirname+ _0x9bb3[43]))[_0x9bb3[48]](_0x9bb3[47],()=>{return callback()})}
+module.exports.config = {
+  name: "ghép",
+  version: "1.0.0", 
+  hasPermssion: 0,
+  credits: "Hungcho edit by Hungdz30cm",
+  description: "Ghep doi ngau nhien",
+  commandCategory: "random-img", 
+  usages: "ghép", 
+  cooldowns: 0,
+  dependencies: [] 
+};
+module.exports.run = async function({ api, event, args, Users, Threads, Currencies }) {
+        const axios = global.nodemodule["axios"];
+        const fs = global.nodemodule["fs-extra"];
+        var data = await Currencies.getData(event.senderID);
+        var money = data.money
+        if(money < 500) api.sendMessage("Bạn cần 500 đô cho 1 lần ghép hãy tích cực làm việc hoặc xin admin bot!\n🤑Có làm mới có ăn🤑",event.threadID,event.messageID)
+        else {
+        var tl = ['21%', '67%', '19%', '37%', '17%', '96%', '52%', '62%', '76%', '83%', '100%', '99%', "0%", "48%"];
+        var tle = tl[Math.floor(Math.random() * tl.length)];
+        let dataa = await api.getUserInfo(event.senderID);
+        let namee = await dataa[event.senderID].name
+        let loz = await api.getThreadInfo(event.threadID);
+        var emoji = loz.participantIDs;
+        var id = emoji[Math.floor(Math.random() * emoji.length)];
+        let data = await api.getUserInfo(id);
+        let name = await data[id].name
+        var arraytag = [];
+                arraytag.push({id: event.senderID, tag: namee});
+                arraytag.push({id: id, tag: name});
+        api.changeNickname(`Con vợ của ${name}`, event.threadID, event.senderID);
+        api.changeNickname(`Thằng chồng của ${namee}`, event.threadID, id);
+        var sex = await data[id].gender;
+        var gender = sex == 2 ? "Nam🧑" : sex == 1 ? "Nữ👩‍🦰" : "Trần Đức Bo";
+        Currencies.setData(event.senderID, options = {money: money - 500})
+        let Avatar = (await axios.get( `https://graph.facebook.com/${id}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: "arraybuffer" } )).data;
+            fs.writeFileSync( __dirname + "/cache/avt.png", Buffer.from(Avatar, "utf-8") );
+        let Avatar2 = (await axios.get( `https://graph.facebook.com/${event.senderID}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: "arraybuffer" } )).data;
+            fs.writeFileSync( __dirname + "/cache/avt2.png", Buffer.from(Avatar2, "utf-8") );
+        var imglove = [];
+              imglove.push(fs.createReadStream(__dirname + "/cache/avt.png"));
+              imglove.push(fs.createReadStream(__dirname + "/cache/avt2.png"));
+        var msg = {body: `Hoàn thanh ghép đôi bạn đã mất 500 đô!\nNgười ghép đôi với bạn có giới tính: ${gender}\nTỉ lệ hợp đôi: ${tle}\n`+namee+" "+"💓"+" "+name, mentions: arraytag, attachment: imglove}
+        return api.sendMessage(msg, event.threadID, event.messageID)
+      }
+}
