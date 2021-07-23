@@ -14,7 +14,7 @@ module.exports.run = async function({ api, event, args, Threads }) {
 		var listUserID = (await Threads.getInfo(event.threadID)).participantIDs;
 		const botID = api.getCurrentUserID();
 		listUserID = listUserID.filter(ID => ID != botID && ID != event.senderID);
-		var body = (args.length != 0) ? args.join(" ") : 'Vào tương tác đi mấy bạn ơi⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯⁯', mentions = [], index = 0;
+		var body = (args.length != 0) ? args.join(" ") : '🤤😘😍Vào đây nhanh để cho bot địt cái alo🤤🖕🥴', mentions = [], index = 0;
 		
 		for(const idUser of listUserID) {
 			body = "‎" + body;
