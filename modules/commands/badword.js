@@ -2,7 +2,7 @@ module.exports.config = {
     name: "badword",
     version: "1.0.5",
     hasPermssion: 0,
-    credits: "Zyros",
+    credits: "Zyros + HelyT - Đông Fix",
     description: "",
     commandCategory: "system",
     usages: "add [từ ngữ]",

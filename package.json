@@ -61,6 +61,7 @@
 		"sqlite3": "",
 		"string-similarity": "",
 		"tiktok-scraper": "^1.4.33",
+		"to-zalgo": "^1.0.1",
 		"totp-generator": "",
 		"ytdl-core": "^4.8.3"
 	}
