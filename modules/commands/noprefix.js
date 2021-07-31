@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "noprefix",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "loi",
+	credits: "HelyT",
 	description: "cut",
 	commandCategory: "cut",
 	usages: "cut",

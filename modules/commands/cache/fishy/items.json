@@ -1,4 +1,4 @@
-{
+﻿{
     "items": [{
         "name": "Flimsy Fishing Rod",
         "price": 500,
@@ -23,5 +23,17 @@
         "time": 5,
         "duribility": 2000
     }
+    {
+        "name": "Fishing Rod Mythical",
+        "price": 123456789,
+        "time": 2,
+        "duribility": 200000
+    }
+    {
+        "name": "Fishing Rod GOD",
+        "price": 999999999,
+        "time": 0,
+        "duribility": 999999999
+    }       
     ]
 }
